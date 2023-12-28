@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../css/MyComponents.scss'
+import '../../css/MyComponents.scss'
 const DisplayUser = (props) => {
     const { list } = props
     const [isList, setIsList] = useState(true)
