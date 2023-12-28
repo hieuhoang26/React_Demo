@@ -11,8 +11,6 @@ const App = () => {
 
   return (
     //<MyComponent></MyComponent>
-    // <HandleForm></HandleForm>
-
     <div className="App-container">
       HelloWorld
       <button className='btn btn-primary'>Submit</button>
