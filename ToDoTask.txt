@@ -8,5 +8,6 @@
         --> render tự động ở cuối, trước thẻ <body> , not in root
     + preview image 
     +  api create user
+    + validate 
 
 
