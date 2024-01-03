@@ -1,0 +1,12 @@
+- Chap 5: React-router
+    + Built Header
+    + Use Router to navigate page
+    + Index Route, Link tag
+    + Built Sidebar for Admin
+- Chap 6: CRUD
+    + Modal for add user (Admin) / upload file
+        --> render tự động ở cuối, trước thẻ <body> , not in root
+    + preview image 
+    +  api create user
+
+

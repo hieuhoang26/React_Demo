@@ -13,6 +13,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import HomePage from './components/Home/HomePage';
+import ManageUser from './components/Admin/Content/ManageUser';
+import DashBoard from './components/Admin/Content/DashBoard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
@@ -25,12 +27,26 @@ const router = createBrowserRouter([
         index: true, element: <HomePage />
       },
       {
-        path: "/user",
+        path: "user",
         element: <User />,
       },
+      // {
+      //   path: "/admin",
+      //   element: <Admin />,
+      // },1
+    ]
+  },
+  {
+    path: "/admin",
+    element: <Admin />,
+    errorElement: <ErrorPage />,
+    children: [
       {
-        path: "/admin",
-        element: <Admin />,
+        index: true, element: <DashBoard />
+      },
+      {
+        path: "manage-user",
+        element: <ManageUser />,
       },
     ]
   },
