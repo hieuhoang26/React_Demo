@@ -5,6 +5,7 @@ import '../../../css/ManageUser.scss'
 import { FcPlus } from 'react-icons/fc'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { postCreateNewUser } from '../../../services/ApiService'
 
 
 function ModalCreateUser(props) {
@@ -49,26 +50,22 @@ function ModalCreateUser(props) {
         const isValidEmail = validateEmail(email)
         if (!isValidEmail) {
             toast.error('Invalid Email')
+            return;
+        }
+        if (!password) {
+            toast.error('Invalid Password')
             return
         }
-        // submit
-        const FormData = require('form-data');
-
-        const form = new FormData();
-        form.append('email', email);
-        form.append('password', password);
-        form.append('username', username);
-        form.append('role', role);
-        form.append('userImage', image);
-
-        let res = await axios.post('http://localhost:8081/api/v1/participant', form)
+        // submit 
+        let res = await postCreateNewUser(email, password, username, role, image)
+        // let res = await axios.post('http://localhost:8081/api/v1/participant', form)
         console.log(res)
-        if (res.data && res.data.EC == 0) {
-            toast.success(res.data.EM)
+        if (res && res.EC === 0) {
+            toast.success(res.EM)
             handleClose()
         }
-        if (res.data && res.data.EC != 0) {
-            toast.error(res.data.EM)
+        if (res && res.EC !== 0) {
+            toast.error(res.EM)
             handleClose()
         }
     }

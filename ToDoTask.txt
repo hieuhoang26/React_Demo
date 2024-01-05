@@ -8,6 +8,8 @@
         --> render tự động ở cuối, trước thẻ <body> , not in root
     + preview image 
     +  api create user
-    + validate 
+    + valid email + toastify
+    + optimize api axios, Interceptor (custom request or respone)
+    
 
 
